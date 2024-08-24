@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recolección de Datos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="container">
+        <div id="general-info">
+            <h2>Datos Generales</h2>
+            <label for="fecha">Fecha (DDMMYYYY):</label>
+            <input type="text" id="fecha" name="fecha" maxlength="8">
+            <label for="servicio">Tipo de servicio:</label>
+            <input type="text" id="servicio" name="servicio">
+            <button onclick="setGeneralInfo()">Siguiente</button>
+        </div>
+        <div id="num-personas" class="hidden">
+            <h2>¿Cuántas personas serán entrevistadas?</h2>
+            <input type="number" id="numPersonas" name="numPersonas">
+            <button onclick="setNumPersonas()">Aceptar</button>
+        </div>
+        <div id="lobby" class="hidden"></div>
+        <div id="interview" class="hidden">
+            <h2 id="question"></h2>
+            <input type="text" id="answer">
+            <button onclick="prevQuestion()">Atrás</button>
+            <button onclick="nextQuestion()">Siguiente</button>
+            <button onclick="finishInterview()">Listo</button>
+        </div>
+        <div id="result-container" class="hidden">
+            <textarea id="result-text" rows="10" cols="50" readonly></textarea>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
